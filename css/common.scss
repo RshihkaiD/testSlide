@@ -1,5 +1,59 @@
 @import "reset.css";
-html{
-  font-family: "Microsoft JhengHei", "Heiti TC", "WenQuanYi Zen Hei", "Arial";
-  font-size:16px;
+
+html {
+  body {
+    font-family: "Microsoft JhengHei", "Heiti TC", "WenQuanYi Zen Hei", "Arial";
+    font-size: 16px;
+    .slideShowContainer {
+      width: 100%;
+      position: relative;
+      display: block;
+      overflow: hidden;
+      ul {
+        li {
+          display: inline-block;
+          display: none;
+          &:first-child {
+            display: block;
+          }
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .slideShowNext,
+      .slideShowPrev {
+        width: 50%;
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        opacity:0;
+        img {
+          width: 100%;
+          max-width: 50px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        &::before{
+          display: inline-block;
+          height:100%;
+          vertical-align: middle;
+          content: " ";
+        }
+      }
+      .slideShowNext {
+        text-align: right;
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:inherit;
+        right:0;
+      }
+      &:hover{
+        .slideShowNext,
+        .slideShowPrev{}
+      }
+    }
+  }
 }

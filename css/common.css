@@ -1,5 +1,60 @@
 @import url(reset.css);
-html {
+html body {
   font-family: "Microsoft JhengHei", "Heiti TC", "WenQuanYi Zen Hei", "Arial";
   font-size: 16px;
+}
+
+html body .slideShowContainer {
+  width: 100%;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+html body .slideShowContainer ul li {
+  display: inline-block;
+  display: none;
+}
+
+html body .slideShowContainer ul li:first-child {
+  display: block;
+}
+
+html body .slideShowContainer ul li img {
+  width: 100%;
+}
+
+html body .slideShowContainer .slideShowNext,
+html body .slideShowContainer .slideShowPrev {
+  width: 50%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+}
+
+html body .slideShowContainer .slideShowNext img,
+html body .slideShowContainer .slideShowPrev img {
+  width: 100%;
+  max-width: 50px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+html body .slideShowContainer .slideShowNext::before,
+html body .slideShowContainer .slideShowPrev::before {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  content: " ";
+}
+
+html body .slideShowContainer .slideShowNext {
+  text-align: right;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: inherit;
+  right: 0;
 }

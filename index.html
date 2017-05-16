@@ -2,14 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body>
-<div class="slideShowContainer" data-slide-block></div>
+<div class="slideShowContainer" data-slide-block>
+    <ul id="renderView">
+        <li v-for="(item, index) in slideData">
+            <a v-bind:href="item.link" v-bind:target="item.target">
+                <img v-bind:src="item.image" v-bind:title="item.description">
+            </a>
+        </li>
+    </ul>
+    <div class="slideShowPrev">
+        <img src="img/bn_arrow_prev.png" alt="" v-on:click="prevBtn">
+    </div>
+    <div class="slideShowNext">
+        <img src="img/bn_arrow_next.png" alt="" v-on:click="nextBtn">
+    </div>
+</div>
 
 </body>
+<!-- auto render view -->
 <script type="application/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.min.js"></script>
+<script type="application/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.1/vue-resource.min.js"></script>
+<script type="application/javascript" src="js/render.js"></script>
+<!-- slide show module -->
 <script type="application/javascript" src="js/testSlide.js"></script>
 </html>
